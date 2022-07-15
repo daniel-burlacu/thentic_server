@@ -1,4 +1,3 @@
-const Pool = require('pg').Pool;
 const express = require('express');
 const cors = require('cors');
 const keccak256 = require('keccak256');
@@ -44,12 +43,10 @@ app.get('/api/getall', (req, res) => {
     client.query(sql, (err, result) => {
         if (err) throw err;
         
-        console.log(result.rowCount);
+        console.log(result);
         
-        res.send(JSON.stringify(result.rowCount));
-    }).catch(err => {
-      throw err;
-  });
+        res.send(result);
+    })
 });
 
 app.post('/api/getWalletVerify', (req, res) => {
@@ -68,10 +65,10 @@ app.post('/api/getWalletVerify', (req, res) => {
 
 app.post("/api/insertWallet", async(req, res) => {
   let values = req.body;
-  let sql = `INSERT INTO pfpracernft(id, wallet, txtype, amount) VALUES ('${values.id}','${values.wallet}','${values.txtype}', '${values.amount}')`;
+  let sql = `INSERT INTO pfpracernft(wallet, txtype, amount) VALUES ('${values.wallet}','${values.txtype}', '${values.amount}')`;
   console.log("My insert query is:"+sql);
   
-  if(values.id!==undefined && values.wallet!==undefined && values.amount!==undefined){
+  if(values.wallet!==undefined && values.amount!==undefined){
       client.query(sql, (err, result) => {
         if (err) throw err;
         res.send("Success");
