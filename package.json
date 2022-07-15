@@ -1,0 +1,23 @@
+{
+  "name": "herokupostgressserver",
+  "version": "1.0.0",
+  "description": "Server/postgresql that interacts with app on godaddy pfpracernft",
+  "main": "index.js",
+  "author": "DANIEL BURLACU",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "keccak256": "^1.0.6",
+    "nodemon": "^2.0.19",
+    "pg": "^8.7.3",
+    "react-scripts": "^5.0.1"
+  },
+  "scripts": {
+    "start": "node index.js"
+  }, 
+  "engines": {
+    "node": "16.x"
+  }
+}
