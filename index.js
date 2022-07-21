@@ -53,7 +53,7 @@ app.get('/api/getall', (req, res) => {
 app.post('/api/getWalletVerify', (req, res) => {
   let values = req.body;
   console.log("My values is:"+values.wallet);
-  let sql = `SELECT COUNT(wallet) AS amount FROM pfpracernft WHERE wallet LIKE '${values.wallet}'`;
+  let sql = `SELECT COUNT(wallet) AS amount FROM pfpracernft WHERE wallet LIKE'${values.wallet}' and txtype like 'withdrawal'`;
   
   client.query(sql, (err, result) => {
     if (err) throw err;
