@@ -78,3 +78,19 @@ app.post("/api/insertWallet", async(req, res) => {
     res.send("Fail");
   }
 });
+
+
+// app.post("/api/updateTxlWallet", async(req, res) => {
+//   let values = req.body;
+//   let sql = `update pfpracernft set txtype = '${values.txtype}' where wallet like '${values.wallet}' and txtype like 'NON'`
+//   console.log("My insert query is:"+sql);
+  
+//   if(values.wallet!==undefined && values.amount!==undefined){
+//       client.query(sql, (err, result) => {
+//         if (err) throw err;
+//         res.send("Success");
+//     });
+//   }else{
+//     res.send("Fail");
+//   }
+// });
