@@ -1,7 +1,7 @@
 {
   "name": "herokupostgressserver",
   "version": "1.0.0",
-  "description": "Server/postgresql that interacts with app on godaddy pfpracernft",
+  "description": "Server/postgresql that interacts with app on godaddy mistery room",
   "main": "index.js",
   "author": "DANIEL BURLACU",
   "license": "MIT",
